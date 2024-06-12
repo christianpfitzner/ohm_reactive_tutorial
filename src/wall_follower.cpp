@@ -67,16 +67,28 @@ private:
      */
     void lidarCallback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
     {
-        // Process the lidar data and calculate the desired velocity
-        
-        std::cout << __PRETTY_FUNCTION__ << std::endl;
+        // Implement wall-following behavior here
+       
 
-        // publish an error
+
+
+
+        
+
+        // Implement a path controller based on the distance to the wall. 
+        // A suggestion is a PI controller. 
+
+
+
+
+
+
+
 
         // Create a Twist message with the desired velocity
         geometry_msgs::msg::Twist cmd_vel_msg;
         cmd_vel_msg.linear.x  = 0.5;  // Example: set linear velocity to 0.5 m/s
-        cmd_vel_msg.angular.z = 0.1; // Example: set angular velocity to 0.1 rad/s
+        cmd_vel_msg.angular.z = 0.1;  // Example: set angular velocity to 0.1 rad/s
 
         // Publish the cmd_vel message
         cmd_vel_publisher_->publish(cmd_vel_msg);
